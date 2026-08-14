@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALL COURSES | Interior Gurukulam</title>
+  <meta name="description"
+    content="Explore Interior Gurukulam's comprehensive interior design and business courses with EMI options.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="subpages.css">
+  <style>
+    .hero2 {
+      background: linear-gradient(120deg, #10243e 0%, #1b385d 65%, #e7b85b 160%);
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 16px;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 20px;
+      padding: 0 0 24px 0;
+      box-shadow: 0 4px 16px rgba(23, 32, 42, 0.06);
+      border: 1px solid rgba(23, 32, 42, 0.08);
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(231, 184, 91, 0.12);
+      border-color: rgba(231, 184, 91, 0.3);
+    }
+
+    .card-media {
+      width: 100%;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+      background: #f7f4ed;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .course-card:hover .card-media img {
+      transform: scale(1.08);
+    }
+
+    .course-card-content {
+      padding: 20px 24px 0 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .course-category {
+      display: inline-block;
+      align-self: flex-start;
+      background: #10243e;
+      color: white;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .course-category--beginner { background: #10243e; }
+    .course-category--intermediate { background: #e7b85b; color: #17202a; }
+    .course-category--advanced { background: #8b6a1e; }
+    .course-category--professional { background: #17202a; }
+
+    .course-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #17202a;
+      margin: 0 0 8px 0;
+      line-height: 1.35;
+      min-height: 2.7em;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .course-meta {
+      color: #10243e;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .course-fee {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #e7b85b;
+      margin-bottom: 12px;
+    }
+
+    .course-emi {
+      background: linear-gradient(135deg, #f6ead0 0%, #f7f4ed 100%);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      color: #17202a;
+      margin-bottom: 16px;
+      border: 1px solid rgba(231, 184, 91, 0.12);
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      line-height: 1.4;
+    }
+
+    .course-desc {
+      font-size: 0.92rem;
+      color: #667085;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e7b85b 0%, #d4a04a 100%);
+      color: #17202a;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(231, 184, 91, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #d4a04a 0%, #c4923a 100%);
+    }
+
+    .btn-secondary {
+      background: #f7f4ed;
+      color: #17202a;
+      border: 1.5px solid rgba(16, 36, 62, 0.4);
+    }
+
+    .btn-secondary:hover {
+      background: #10243e;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="subpage">
+    <header class="subnav">
+      <a class="brand" href="index.html" aria-label="Interior Gurukulam Home">
+        <div class="brand-logo-wrap">
+          <img src="assets/logo.png" alt="Interior Gurukulam Logo" class="brand-logo">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-text-en">INTERIOR GURUKULAM</span>
+          <span class="brand-text-ta"><span class="c-terracotta">இன்டீரியர்</span> <span
+              class="c-olive">குருகுலம்</span></span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="navlinks">
+        <a href="index.html">HOME</a>
+        <a href="courses-new.html" class="active">ALL COURSES</a>
+        <a href="nri-training.html">NRI ONLINE TRAINING</a>
+        <a href="franchise-new.html">BUSINESS FRANCHISE</a>
+        <a href="joint-venture.html">INTERIOR OWNER JOINT VENTURE</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero2">
+        <div class="container">
+          <div class="kicker">01 • Courses</div>
+          <h1 class="reveal reveal-up">ALL COURSES</h1>
+          <p class="reveal reveal-up reveal-delay-1">உங்கள் திறமையை தொழிலாக மாற்றுங்கள்</p>
+          <div class="hero2-divider reveal reveal-scale reveal-delay-2">
+            <span class="line"></span>
+            <svg class="divider-lotus" viewBox="0 0 24 16" width="22" height="15" fill="currentColor">
+              <path d="M12 1.6C14.1 5.2 14.9 8.8 12 13.4 9.1 8.8 9.9 5.2 12 1.6Z" />
+              <path d="M12 13.4C8.6 11.9 6.3 8.9 5.9 5.2 9 6.4 11.4 9.6 12 13.4Z" opacity=".85" />
+              <path d="M12 13.4C15.4 11.9 17.7 8.9 18.1 5.2 15 6.4 12.6 9.6 12 13.4Z" opacity=".85" />
+              <path d="M12 13.4C8 13.9 4.1 12.5 1.7 9.8 5 9 9.6 10.5 12 13.4Z" opacity=".7" />
+              <path d="M12 13.4C16 13.9 19.9 12.5 22.3 9.8 19 9 14.4 10.5 12 13.4Z" opacity=".7" />
+            </svg>
+            <span class="line"></span>
+          </div>
+          <div class="hero-banner-wrap reveal reveal-scale reveal-delay-3">
+            <img src="assets/courses-banner.jpg" alt="Interior Design Training Workshop" class="hero-banner-img">
+            <div class="hero-banner-overlay"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="container">
+          <h2>Interior Design Courses</h2>
+          <div class="course-grid">
+
+            <!-- Instant Income Course -->
+            <div class="course-card">
+              <a href="courses/course-instant-income.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/mosquito-net-course.jpg" alt="Instant Income – Mosquito Net">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--beginner">BEGINNER</span>
+                <a href="courses/course-instant-income.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">Instant Income – Mosquito Net</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Duration: 1 Hour
+                </p>
+                <div class="course-fee">₹250</div>
+                <div class="course-emi">⚡ One Time Payment • Instant Start</div>
+                <p class="course-desc">Learn to install mosquito nets for doors and windows. Perfect for quick income generation.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-instant-income.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+            <!-- PVC/UPVC Course -->
+            <div class="course-card">
+              <a href="courses/course-pvc-upvc-frame.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/pvc-upvc-frame.jpg" alt="PVC / UPVC Interior Frame">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--intermediate">INTERMEDIATE</span>
+                <a href="courses/course-pvc-upvc-frame.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">PVC / UPVC Interior Frame</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 16 14"/></svg>
+                  Duration: Flexible
+                </p>
+                <div class="course-fee">₹10,000</div>
+                <div class="course-emi">💳 EMI: ₹500 × 26 Months (Initial: ₹2,000)</div>
+                <p class="course-desc">Master PVC and UPVC frame installation, cupboard work, and glass fitting.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-pvc-upvc-frame.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+            <!-- UPVC Panel Work -->
+            <div class="course-card">
+              <a href="courses/course-upvc-panel.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/upvc-panel.jpg" alt="UPVC Panel Work Course">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--intermediate">INTERMEDIATE</span>
+                <a href="courses/course-upvc-panel.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">UPVC Panel Work Course</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 16 14"/></svg>
+                  Duration: Flexible
+                </p>
+                <div class="course-fee">₹20,000</div>
+                <div class="course-emi">💳 EMI: ₹500 × 40 Months (Initial: ₹5,000)</div>
+                <p class="course-desc">Advanced UPVC panel installation with practical project training.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-upvc-panel.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+            <!-- MDF Interior Panel -->
+            <div class="course-card">
+              <a href="courses/course-mdf-panel.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/mdf-interior.jpg" alt="MDF Interior Panel Work">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--intermediate">INTERMEDIATE</span>
+                <a href="courses/course-mdf-panel.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">MDF Interior Panel Work</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 16 14"/></svg>
+                  Duration: Flexible
+                </p>
+                <div class="course-fee">₹20,000</div>
+                <div class="course-emi">💳 EMI: ₹500 × 40 Months (Initial: ₹5,000)</div>
+                <p class="course-desc">Complete MDF panel and cupboard design for modern interiors.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-mdf-panel.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+            <!-- Plywood Course -->
+            <div class="course-card">
+              <a href="courses/course-plywood.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/plywood-interior.jpg" alt="Plywood Interior Course">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--advanced">ADVANCED</span>
+                <a href="courses/course-plywood.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">Plywood Interior Course</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 16 14"/></svg>
+                  Duration: Flexible
+                </p>
+                <div class="course-fee">₹25,000</div>
+                <div class="course-emi">💳 EMI: ₹500 × 50 Months (Initial: ₹5,000)</div>
+                <p class="course-desc">Expert plywood installation and custom furniture design.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-plywood.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+            <!-- Acrylic Course -->
+            <div class="course-card">
+              <a href="courses/course-acrylic.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/acrylic-interior.jpg" alt="Acrylic Interior Course">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--advanced">ADVANCED</span>
+                <a href="courses/course-acrylic.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">Acrylic Interior Course</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 16 14"/></svg>
+                  Duration: Flexible
+                </p>
+                <div class="course-fee">₹30,000</div>
+                <div class="course-emi">💳 EMI: ₹500 × 60 Months (Initial: ₹5,000)</div>
+                <p class="course-desc">Premium acrylic finishes and modern interior solutions.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-acrylic.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+            <!-- Accessories Basic -->
+            <div class="course-card">
+              <a href="courses/course-basic-accessories.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/basic-accessories.jpg" alt="Accessories – Basic Course">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--beginner">BEGINNER</span>
+                <a href="courses/course-basic-accessories.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">Accessories – Basic Course</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Duration: Flexible
+                </p>
+                <div class="course-fee">₹10,000</div>
+                <div class="course-emi">💳 EMI: ₹500 × 26 Months (Initial: ₹2,000)</div>
+                <p class="course-desc">Learn basic fixture and accessory installation techniques.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-basic-accessories.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+            <!-- Advanced Accessories -->
+            <div class="course-card">
+              <a href="courses/course-advanced-accessories.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/advanced-accessories.jpg" alt="Advanced Accessories Fixing">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--advanced">ADVANCED</span>
+                <a href="courses/course-advanced-accessories.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">Advanced Accessories Fixing</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 16 14"/></svg>
+                  Duration: Flexible
+                </p>
+                <div class="course-fee">₹20,000</div>
+                <div class="course-emi">💳 EMI: ₹500 × 40 Months (Initial: ₹5,000)</div>
+                <p class="course-desc">Professional accessory fixing and hardware installation.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-advanced-accessories.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+            <!-- Estimation & Measurement -->
+            <div class="course-card">
+              <a href="courses/course-estimation-measurement.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/estimation-measurement.jpg" alt="Estimation & Measurement">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--professional">PROFESSIONAL</span>
+                <a href="courses/course-estimation-measurement.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">Estimation & Measurement</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Duration: Flexible
+                </p>
+                <div class="course-fee">₹30,000</div>
+                <div class="course-emi">💳 EMI: ₹500 × 60 Months (Initial: ₹5,000)</div>
+                <p class="course-desc">Master estimation, measurement, BOM and BOQ preparation.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-estimation-measurement.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+            <!-- Interior Repair -->
+            <div class="course-card">
+              <a href="courses/course-interior-repair.html" style="text-decoration:none; color:inherit;">
+                <div class="card-media">
+                  <img src="assets/interior-repair.jpg" alt="Interior Repair Work Course">
+                </div>
+              </a>
+              <div class="course-card-content">
+                <span class="course-category course-category--professional">PROFESSIONAL</span>
+                <a href="courses/course-interior-repair.html" style="text-decoration:none; color:inherit;">
+                  <h3 class="course-title">Interior Repair Work Course</h3>
+                </a>
+                <p class="course-meta">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Duration: Flexible
+                </p>
+                <div class="course-fee">₹40,000</div>
+                <div class="course-emi">💳 EMI: ₹500 × 80 Months (Initial: ₹5,000)</div>
+                <p class="course-desc">Complete interior repair, maintenance and restoration expertise.</p>
+              </div>
+              <div class="btn-group">
+                <a href="courses/course-interior-repair.html" class="btn btn-primary">ENROLL NOW</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Program -->
+      <section class="section reveal">
+        <div class="container">
+          <article class="card2 promo">
+            <div class="card-media" style="height: 260px;">
+              <img src="assets/modular-kitchen.jpg" alt="All Interior Express Modular Kitchen & Home Course">
+            </div>
+            <span class="badge">⭐ FEATURED PROGRAM</span>
+            <h2 style="margin-top:12px">ALL INTERIOR EXPRESS COURSE</h2>
+            <p style="font-size: 1.1rem; color: #e8edf4;">Complete Interior Design Mastery in 1 Month</p>
+            <div class="grid" style="margin-top:24px">
+              <div>
+                <p class="meta" style="color: #e8edf4; font-weight: 600;">Regular Value</p>
+                <div class="price" style="font-size: 2rem; color: #e7b85b;">₹2,40,000</div>
+                <p class="meta" style="color: #e8edf4; font-weight: 600; margin-top: 12px;">Special Offer</p>
+                <div class="price" style="font-size: 2rem; color: #e7b85b;">₹99,000+</div>
+              </div>
+              <div>
+                <h3 style="color: #fff;">EMI AVAILABLE</h3>
+                <p style="color: #e8edf4; font-weight: 600; margin: 12px 0;">Initial Payment: ₹10,000</p>
+                <p style="color: #e8edf4; font-weight: 600;">Balance EMI: ₹4,600 × 50 Months</p>
+                <p style="color: #e8edf4; font-weight: 600; margin-top: 16px;">✓ Includes Free Aluminium Interior Course
+                </p>
+              </div>
+            </div>
+            <div class="callout" style="background: #f7f4ed; padding: 20px; border-radius: 16px; margin-top: 24px;">
+              <h3 style="color: #17202a;">🎁 BONUS: FREE ALUMINIUM INTERIOR COURSE</h3>
+              <p style="color: #17202a;">Master all techniques: PVC • UPVC • MDF • Plywood • Acrylic • Accessories •
+                Estimation • Measurement • BOM • BOQ • Interior Repair • Aluminium Interior</p>
+              <a href="contact.html" class="btn btn-primary" style="display: inline-block; margin-top: 16px;">ENROLL
+                NOW</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="section reveal">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion" style="max-width: 800px; margin: 0 auto;">
+            <details style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 12px; padding: 16px;">
+              <summary style="cursor: pointer; font-weight: 600; color: #17202a;">Who can join the courses?</summary>
+              <p style="margin-top: 12px; color: #555;">Beginners, students, working professionals, interior design
+                aspirants, business owners, and anyone looking for additional income.</p>
+            </details>
+            <details style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 12px; padding: 16px;">
+              <summary style="cursor: pointer; font-weight: 600; color: #17202a;">Is practical training included?
+              </summary>
+              <p style="margin-top: 12px; color: #555;">Yes, all courses include hands-on practical training with
+                industry experts and real-world project experience.</p>
+            </details>
+            <details style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 12px; padding: 16px;">
+              <summary style="cursor: pointer; font-weight: 600; color: #17202a;">What is the course duration?</summary>
+              <p style="margin-top: 12px; color: #555;">Duration varies by course, from 1 hour quick courses to 1-month
+                comprehensive programs. Check individual course details.</p>
+            </details>
+            <details style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 12px; padding: 16px;">
+              <summary style="cursor: pointer; font-weight: 600; color: #17202a;">Is EMI available?</summary>
+              <p style="margin-top: 12px; color: #555;">Yes, most courses offer EMI options. See individual course
+                details for specific payment plans.</p>
+            </details>
+            <details style="margin-bottom: 16px; border: 1px solid #ddd; border-radius: 12px; padding: 16px;">
+              <summary style="cursor: pointer; font-weight: 600; color: #17202a;">Is business guidance provided?
+              </summary>
+              <p style="margin-top: 12px; color: #555;">Yes, advanced courses include business guidance, client
+                handling, and career support.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer2">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Interior Gurukulam Logo" class="footer-logo">
+        <span class="footer-text">INTERIOR GURUKULAM • இன்டீரியர் குருகுலம்</span>
+      </div>
+      <p>கற்றதும் <span class="dot">•</span> கற்பித்ததும் <span class="dot">•</span> கற்போம் <span class="dot">•</span>
+        உருவாக்குவோம்</p>
+    </footer>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Navigation Drawer Toggle
+      const toggleBtn = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.navlinks');
+      if (toggleBtn && navLinks) {
+        toggleBtn.addEventListener('click', () => {
+          toggleBtn.classList.toggle('open');
+          navLinks.classList.toggle('show');
+        });
+      }
+
+      // Scroll Reveal Observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+
+</html>

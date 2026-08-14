@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACCESSORIES – BASIC COURSE - Interior Gurukulam</title>
+  <meta name="description" content="ACCESSORIES – BASIC COURSE at Interior Gurukulam. Complete practical training.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Arima:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../subpages.css">
+  <style>
+    .course-detail-hero {
+      background: linear-gradient(120deg, #10243e 0%, #1b385d 65%, #e7b85b 160%);
+      padding: 36px 0 20px;
+      border-bottom: 1px solid rgba(16, 36, 62, 0.12);
+    }
+    .detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 36px;
+      margin-top: 24px;
+    }
+    @media (max-width: 900px) {
+      .detail-layout { grid-template-columns: 1fr; }
+    }
+    .detail-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(23, 32, 42, 0.06);
+      border: 1px solid rgba(16, 36, 62, 0.12);
+    }
+    .detail-media {
+      width: 100%;
+      height: 280px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .detail-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .detail-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--olive-deep);
+      margin-bottom: 12px;
+    }
+    .overview-points-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .overview-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #f7f4ed;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border-left: 4px solid var(--terracotta);
+      font-size: 0.98rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .overview-point-bullet {
+      color: var(--terracotta);
+      font-size: 1.1rem;
+      font-weight: bold;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .training-container {
+      margin-top: 16px;
+    }
+    .training-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .training-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--cream);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      border: 1px solid rgba(16, 36, 62, 0.1);
+    }
+    .training-item-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--olive);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+    }
+    .pricing-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 35px rgba(23, 32, 42, 0.08);
+      border: 2px solid var(--olive);
+      position: relative;
+    }
+    @media (min-height: 800px) and (min-width: 901px) {
+      .pricing-card {
+        position: sticky;
+        top: 24px;
+      }
+    }
+    .price-main {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--terracotta);
+      margin-top: 4px;
+    }
+    .emi-box-detail {
+      background: #f6ead0;
+      border: 1.5px dashed var(--olive);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+    .emi-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      font-size: 0.92rem;
+    }
+    .emi-row:last-child { border-bottom: none; }
+
+    .btn-enroll-primary {
+      display: block;
+      width: 100%;
+      background: var(--terracotta);
+      color: #ffffff !important;
+      text-align: center;
+      padding: 16px 24px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(231, 184, 91, 0.35);
+      transition: all 0.3s ease;
+      margin-top: 16px;
+      border: none;
+    }
+    .btn-enroll-primary:hover {
+      background: var(--terracotta-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(231, 184, 91, 0.45);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="subpage">
+    <header class="subnav">
+      <a class="brand" href="../index.html" aria-label="Interior Gurukulam Home">
+        <div class="brand-logo-wrap">
+          <img src="../assets/logo.png" alt="Interior Gurukulam Logo" class="brand-logo">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-text-en">INTERIOR GURUKULAM</span>
+          <span class="brand-text-ta"><span class="c-terracotta">இன்டீரியர்</span> <span class="c-olive">குருகுலம்</span></span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="navlinks">
+        <a href="../index.html">HOME</a>
+        <a href="../courses-new.html" class="active">ALL COURSES</a>
+        <a href="../nri-training.html">NRI ONLINE TRAINING</a>
+        <a href="../franchise-new.html">BUSINESS FRANCHISE</a>
+        <a href="../joint-venture.html">INTERIOR OWNER JOINT VENTURE</a>
+        <a href="../contact.html">CONTACT</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="course-detail-hero">
+        <div class="container">
+          <div style="font-size: 0.9rem; font-weight: 600; color: var(--terracotta); text-transform: uppercase;">
+            <a href="../courses-new.html" style="color: inherit; text-decoration: none;">← Back to All Courses</a>
+          </div>
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--olive-deep); margin-top: 8px;">07 • BEGINNER COURSE</div>
+          <h1 class="detail-title" style="margin-top: 4px;">ACCESSORIES – BASIC COURSE</h1>
+          <p style="color: #666; font-weight: 600;">Duration: Flexible • Practical Interior Design Training</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="detail-layout">
+
+            <!-- Left: Course Overview & Training Includes -->
+            <div class="detail-card">
+              <div class="detail-media">
+                <img src="../assets/basic-accessories.jpg" alt="ACCESSORIES – BASIC COURSE">
+              </div>
+
+              <h2 style="font-size: 1.4rem; color: var(--olive-deep); margin-bottom: 4px;">Course Highlights (Point by Point)</h2>
+              <div class="overview-points-list">
+                                <div class="overview-point-item"><span class="overview-point-bullet">✦</span><span>Essential interior hardware & fixture mounting</span></div>
+                <div class="overview-point-item"><span class="overview-point-bullet">✦</span><span>Hinge adjustment, alignment & soft-close fittings</span></div>
+                <div class="overview-point-item"><span class="overview-point-bullet">✦</span><span>Handle, knob, and basic accessory installation</span></div>
+                <div class="overview-point-item"><span class="overview-point-bullet">✦</span><span>Precision alignment tools & hardware maintenance</span></div>
+              </div>
+
+              <h2 style="font-size: 1.4rem; color: var(--olive-deep); margin-top: 32px; margin-bottom: 4px;">
+                📚 Training Includes:
+              </h2>
+              <div class="training-container">
+                <div class="training-list">
+                                    <div class="training-item"><span class="training-item-icon">✓</span><span>Basic Hardware & Fixture Mounting</span></div>
+                  <div class="training-item"><span class="training-item-icon">✓</span><span>Hinge Adjustment & Alignment</span></div>
+                  <div class="training-item"><span class="training-item-icon">✓</span><span>Handle & Knob Installation</span></div>
+                  <div class="training-item"><span class="training-item-icon">✓</span><span>Soft-Close Fitting Techniques</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Pricing & Enroll Box -->
+            <div>
+              <div class="pricing-card">
+                <div style="font-weight: 700; color: #777; font-size: 0.85rem; text-transform: uppercase;">Course Fee</div>
+                <div class="price-main">₹10,000</div>
+
+                <div class="emi-box-detail">
+                  <div style="font-weight: 700; color: var(--olive-deep); font-size: 0.95rem; margin-bottom: 10px;">
+                    💳 Payment Breakdown
+                  </div>
+                  <div class="emi-row">
+                    <span style="color: #666;">Regular Course Fee:</span>
+                    <strong>₹10,000</strong>
+                  </div>
+                  <div class="emi-row">
+                    <span style="color: #666;">EMI Course Fee:</span>
+                    <strong>₹15,000</strong>
+                  </div>
+                  <div class="emi-row">
+                    <span style="color: #666;">Initial Payment:</span>
+                    <strong style="color: var(--terracotta);">₹2,000</strong>
+                  </div>
+                  <div class="emi-row">
+                    <span style="color: #666;">Balance Monthly EMI:</span>
+                    <strong>₹500 × 26 Months</strong>
+                  </div>
+                </div>
+
+                <a href="../contact.html?course=basic-accessories" class="btn-enroll-primary">
+                  ENROLL NOW
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer2">
+      <div class="footer-bottom">
+        <span class="footer-text">INTERIOR GURUKULAM • இன்டீரியர் குருகுலம்</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.navlinks');
+      if (toggleBtn && navLinks) {
+        toggleBtn.addEventListener('click', () => {
+          toggleBtn.classList.toggle('open');
+          navLinks.classList.toggle('show');
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
