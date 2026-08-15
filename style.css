@@ -5,19 +5,19 @@
    ========================================================= */
 
 :root {
-  --olive: #4e5a2f;
-  --olive-deep: #414d26;
+  --olive: #454819;
+  --olive-deep: #3a3d14;
   --terracotta: #a5431a;
-  --card-terracotta: #b54a1b;
-  --gold: #d0951f;
+  --card-terracotta: #b34a12;
+  --gold: #c4841d;
   --cream: #f8f4ea;
   --cream-bg: #f8f4ea;
   --ink: #2a2418;
   --ink-soft: #4a3a2a;
   --nav-ink: #4d3d31;
-  --icon-cream: #f7ecd6;
+  --icon-cream: #f2ca92;
   --lotus: #c4783e;
-  --lotus-gold: #d8b478;
+  --lotus-gold: #e8d4a8;
   --footer-lotus: #e9d7ab;
   --accent-gold: #d9861f;
 
@@ -75,12 +75,12 @@ a { color: inherit; text-decoration: none; }
   align-items: flex-start;
   justify-content: space-between;
   /* inset so HOME / CONTACT sit on the arch, clear of wood + niche */
-  padding: clamp(0.9rem, 4vh, 2rem) clamp(10vw, 18vw, 22rem) 0;
+  padding: clamp(0.9rem, 4vh, 2rem) calc(clamp(10vw, 18vw, 22rem) + 70px) 0;
 }
 
 .nav__link {
   font-size: clamp(0.68rem, min(1.1vw, 1.95vh), 0.88rem);
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.22em;
   color: var(--nav-ink);
   position: relative;
@@ -122,27 +122,34 @@ a { color: inherit; text-decoration: none; }
   pointer-events: auto;
 }
 
+.nav__lotus .lotus {
+  width: 26px;
+  height: auto;
+  display: block;
+}
+
 /* ---------- Hero brand block ---------- */
 .hero {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   width: 100%;
   max-width: 64vw;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   text-align: center;
+  padding-bottom: 0;
 }
 
 /* logo.png is a 1511x1023 canvas with the emblem inset in the middle,
    so the square box + cover crops the empty sides, not the artwork */
 .hero__logo {
   display: block;
-  width: min(37vh, 21vw);
-  height: min(37vh, 21vw);
+  width: min(33vh, 18.5vw);
+  height: min(33vh, 18.5vw);
   margin-top: -1vh;
   margin-bottom: -2.6vh;
   flex-shrink: 0;
@@ -200,28 +207,45 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  margin-top: 0.9vh;
-  color: var(--lotus-gold);
+  margin-top: 1.1vh;
+  color: var(--lotus);
 }
 
 .divider__line {
-  width: 1.35rem;
+  width: 2.4rem;
   height: 1.2px;
   background: currentColor;
-  opacity: 0.85;
+  position: relative;
+  opacity: 0.9;
 }
 
-.divider__lotus { display: block; }
+.divider__line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translateY(-50%);
+}
 
-/* ---------- Cards: four vertical tiles ---------- */
+.divider__line:first-child::after { right: 0; }
+.divider__line:last-child::after { left: 0; }
+
+.divider__lotus { display: block; width: 28px; height: auto; }
+
+/* ---------- Cards: four vertical tiles (client mockup) ---------- */
 .cards {
   position: relative;
   z-index: 4;
-  width: min(54.3vw, 94vw);
+  width: min(56vw, 900px);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: min(1.2vw, 0.8rem);
+  gap: clamp(0.65rem, 1.15vw, 1rem);
   flex-shrink: 0;
+  padding: 0 0 0.2rem;
+  margin-top: 0.45rem;
 }
 
 .card {
@@ -229,12 +253,12 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-radius: min(3.5vh, 1.3rem);
-  padding: 4.3vh 0.6rem 3.1vh;
+  border-radius: 1.35rem;
+  padding: clamp(1.1rem, 3.6vh, 1.7rem) 0.7rem clamp(0.9rem, 2.8vh, 1.35rem);
   color: #fff;
-  box-shadow: 0 10px 26px rgba(30, 20, 10, 0.22);
+  box-shadow: 0 12px 28px rgba(30, 20, 10, 0.24);
   transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease;
-  min-height: min(37.5vh, 21.5vw);
+  min-height: min(36vh, 20.5vw);
 }
 
 .card:hover {
@@ -245,28 +269,24 @@ a { color: inherit; text-decoration: none; }
 .card--olive { background: var(--olive); }
 .card--terracotta { background: var(--card-terracotta); }
 .card--gold { background: var(--gold); }
+.card.card--olive:nth-of-type(3) { background: var(--olive-deep); }
 
 .card__icon {
-  width: clamp(2.5rem, 10.8vh, 5.2rem);
-  height: clamp(2.5rem, 10.8vh, 5.2rem);
+  width: clamp(4.6rem, 14vh, 7rem);
+  height: clamp(4.6rem, 14vh, 7rem);
   border-radius: 50%;
   background: var(--icon-cream);
   display: grid;
   place-items: center;
   flex-shrink: 0;
   overflow: hidden;
+  margin-bottom: 0.15rem;
 }
 
 .card__icon img {
   width: 94%;
   height: 94%;
   object-fit: contain;
-  object-position: center;
-}
-
-.card__icon svg {
-  width: 55%;
-  height: 55%;
 }
 
 .card__body {
@@ -276,31 +296,42 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   flex: 1;
   width: 100%;
+  gap: 0.55rem;
 }
 
 .card__title {
-  font-size: clamp(0.56rem, 2.26vh, 0.95rem);
+  font-family: var(--font-en);
+  font-size: clamp(0.58rem, 2.1vh, 0.82rem);
   font-weight: 600;
-  letter-spacing: 0.06em;
-  line-height: 1.4;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
   text-transform: uppercase;
+  color: #fdf5e6;
 }
 
 .card__rule {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  margin-top: 0.5rem;
+  gap: 0.35rem;
+  margin-top: 0;
   color: var(--lotus-gold);
+  filter: brightness(1.15);
+}
+
+.card__rule .lotus {
+  width: 18px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
 }
 
 .card__rule i {
   display: block;
-  width: 1.05rem;
+  width: 1.15rem;
   height: 1px;
   background: currentColor;
   position: relative;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .card__rule i::after {
@@ -318,12 +349,13 @@ a { color: inherit; text-decoration: none; }
 .card__rule i:last-child::after { right: 0; }
 
 .card__go {
-  width: clamp(1.6rem, 5.2vh, 2.5rem);
-  height: clamp(1.6rem, 5.2vh, 2.5rem);
-  border-radius: 50%;
   display: grid;
+  width: clamp(1.7rem, 4.8vh, 2.3rem);
+  height: clamp(1.7rem, 4.8vh, 2.3rem);
+  border-radius: 50%;
   place-items: center;
   flex-shrink: 0;
+  margin-top: 0.2rem;
   transition: transform 0.3s ease;
 }
 
@@ -343,9 +375,10 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   z-index: 3;
   width: 100%;
-  height: 9.5vh;
+  height: 5.5vh;
   overflow: hidden;
   flex-shrink: 0;
+  margin-top: auto;
 }
 
 .footer__wave {
@@ -357,27 +390,33 @@ a { color: inherit; text-decoration: none; }
 }
 
 .footer__wave--terracotta {
-  height: 16vh;
+  height: 9vh;
   color: var(--terracotta);
   z-index: 1;
 }
 
 .footer__wave--olive {
-  height: 12vh;
+  height: 7vh;
   color: var(--olive);
   z-index: 2;
 }
 
 .footer__lotus {
   position: absolute;
-  bottom: 4.5vh;
+  bottom: 2.2vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.45rem;
   color: var(--footer-lotus);
+}
+
+.footer__lotus .lotus {
+  width: 30px;
+  height: auto;
+  display: block;
 }
 
 .footer__line {
@@ -440,6 +479,7 @@ a { color: inherit; text-decoration: none; }
 
   .nav__link {
     font-size: 0.74rem;
+    font-weight: 800;
     letter-spacing: 0.2em;
     width: max-content;
     color: #3d4a28;
@@ -466,8 +506,8 @@ a { color: inherit; text-decoration: none; }
   }
 
   .hero__logo {
-    width: 210px;
-    height: 210px;
+    width: 190px;
+    height: 190px;
     margin-top: 0;
     margin-bottom: -0.35rem;
   }
@@ -506,6 +546,7 @@ a { color: inherit; text-decoration: none; }
     grid-template-columns: 1fr;
     gap: 0.78rem;
     padding: 1rem 1.2rem 0.5rem;
+    margin-top: 0;
   }
 
   .card {
@@ -519,14 +560,14 @@ a { color: inherit; text-decoration: none; }
   }
 
   .card__icon {
-    width: 3.35rem;
-    height: 3.35rem;
+    width: 4.2rem;
+    height: 4.2rem;
     background: var(--icon-cream);
   }
 
   .card__icon img {
-    width: 78%;
-    height: 78%;
+    width: 94%;
+    height: 94%;
   }
 
   .card__body {
@@ -536,9 +577,10 @@ a { color: inherit; text-decoration: none; }
 
   .card__title {
     font-size: 0.72rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     line-height: 1.32;
-    font-weight: 700;
+    font-weight: 600;
+    color: #fdf5e6;
   }
 
   .card__title br { display: none; }
@@ -548,6 +590,7 @@ a { color: inherit; text-decoration: none; }
   .card__rule { display: none; }
 
   .card__go {
+    display: grid;
     margin-left: auto;
     width: 2.15rem;
     height: 2.15rem;
@@ -555,14 +598,14 @@ a { color: inherit; text-decoration: none; }
   }
 
   .footer {
-    height: 5.6rem;
+    height: 3.4rem;
     margin-top: auto;
   }
 
-  .footer__wave--terracotta { height: 4.8rem; }
-  .footer__wave--olive { height: 4.05rem; }
+  .footer__wave--terracotta { height: 3rem; }
+  .footer__wave--olive { height: 2.5rem; }
   .footer__lotus {
-    bottom: 0.8rem;
+    bottom: 0.45rem;
     color: #e9d7ab;
   }
 }
